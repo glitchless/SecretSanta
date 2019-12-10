@@ -1,0 +1,220 @@
+openapi: 3.0.0
+info:
+  title: Тайный Санта Технопарк
+  description: После успешной авторизации в cookie прописывается токен. Прокидывать
+    его ручками не нужно
+  version: 1.0.0
+servers:
+  - url: https://santa.glitchless.ru/api/
+    description: Glitchless
+  - url: http://localhost
+    description: Localhost
+tags:
+  - name: stats
+    description: Santa stats
+  - name: auth
+    description: All auth variants
+  - name: profile
+    description: Operations about user
+paths:
+  /auth:
+    get:
+      tags:
+        - auth
+      description: "Временный метод для авторизации. Проставляет в куку пользователя авторизационную информацию"
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponseUser'
+  /auth/logout:
+    get:
+      tags:
+        - auth
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /stats:
+    get:
+      tags:
+        - stats
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponseStats'
+  /profile:
+    get:
+      tags:
+        - profile
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponseUser'
+        default:
+          description: On error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    post:
+      tags:
+        - profile
+      description: "Достаточно хотя бы одного параметра в POST запросе"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_active:
+                  type: boolean
+                  nullable: false
+                is_sent:
+                  type: boolean
+                  nullable: false
+                is_received:
+                  type: boolean
+                  nullable: false
+                delivery_name:
+                  type: string
+                  nullable: false
+                delivery_comment:
+                  type: string
+                  nullable: false
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  schemas:
+    Stats:
+      type: object
+      properties:
+        users:
+          type: object
+          properties:
+            active:
+              type: integer
+              format: int64
+            sent:
+              type: integer
+              format: int64
+            received:
+              type: integer
+              format: int64
+        shuffle_date:
+          type: integer
+          format: int64
+        start_date:
+          type: integer
+          format: int64
+        end_date:
+          type: integer
+          format: int64
+        is_expired:
+          type: boolean
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        full_name:
+          type: string
+          example: Куликов Никита
+        is_active:
+          type: boolean
+          example: false
+          description: "Согласился ли человек учавствовать"
+        is_sent:
+          type: boolean
+          example: false
+          description: "Отправил ли человек подарок"
+        is_received:
+          type: boolean
+          example: false
+          description: "Получил ли человек подарок"
+        pair_received:
+          type: boolean
+          example: false
+          description: "Получил ли компаньон подарок"
+        pair_sent:
+          type: boolean
+          example: false
+          description: "Отправили ли вам подарок"
+        pair_delivery_information:
+          $ref: '#/components/schemas/DeliveryInformation'
+        delivery_information:
+          $ref: '#/components/schemas/DeliveryInformation'
+    ApiResponseStats:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 200
+        status:
+          type: string
+          example: OK
+        message:
+          $ref: '#/components/schemas/Stats'
+    ApiResponseUser:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 200
+        status:
+          type: string
+          example: OK
+        message:
+          $ref: '#/components/schemas/User'
+    DeliveryInformation:
+      type: object
+      properties:
+        name:
+          type: string
+          description: По дефолту возращается имя из профиля Технопарка
+          example: Куликов Никита
+        comment:
+          type: string
+          example: Положить под новогоднюю елочку в Технопарке
+          default: Положить под новогоднюю елочку в Технопарке
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 403
+          enum:
+            - 200
+            - 404
+            - 403
+        status:
+          type: string
+          example: FORBIDDEN
+          enum:
+            - OK
+            - NOT_FOUND
+            - FORBIDDEN
+        message:
+          type: string
+          example: "Ошибка"
+          description: "Текстовое описание ошибки"
