@@ -17,11 +17,15 @@ tags:
   - name: profile
     description: Operations about user
 paths:
-  /auth:
-    get:
+  /auth/tp:
+    post:
       tags:
         - auth
       description: "Временный метод для авторизации. Проставляет в куку пользователя авторизационную информацию"
+      parameters:
+        - in: "formData"
+          name: "code"
+          description: "Код, возвращаемый через технопарк oauth"
       responses:
         "200":
           description: successful operation
@@ -30,7 +34,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponseUser'
   /auth/logout:
-    get:
+    post:
       tags:
         - auth
       responses:
