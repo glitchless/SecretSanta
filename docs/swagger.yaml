@@ -165,6 +165,10 @@ components:
           $ref: '#/components/schemas/DeliveryInformation'
         delivery_information:
           $ref: '#/components/schemas/DeliveryInformation'
+        photo_url:
+          type: string
+        profile_url:
+          type: string
     ApiResponseStats:
       type: object
       properties:
