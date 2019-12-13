@@ -109,6 +109,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
+        "400":
+          description: 'Ошибка связанная с превышением максимальной длины строки'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    format: int32
+                    example: 200
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: object
+                    properties:
+                      errors:
+                        type: object
+                        properties:
+                          delivery_comment:
+                            type: string
+                            example: 'Поле комментарии не должно быть больше 256-и символов'
+                          delivery_name:
+                            type: string
+                            example: 'Поле c именем не должно быть больше 25-и символов'
+
 components:
   schemas:
     Stats:
