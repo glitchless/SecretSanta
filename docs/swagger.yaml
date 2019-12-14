@@ -119,7 +119,7 @@ paths:
                   code:
                     type: integer
                     format: int32
-                    example: 200
+                    example: 400
                   status:
                     type: string
                     example: OK
