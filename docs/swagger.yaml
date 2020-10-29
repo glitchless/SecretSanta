@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Тайный Санта Технопарк
+  title: Тайный Санта
   description: После успешной авторизации в cookie прописывается токен. Прокидывать
     его ручками не нужно
   version: 1.0.0
@@ -21,7 +21,7 @@ paths:
     post:
       tags:
         - auth
-      description: "Авторизация через технопарковский oauth"
+      description: "Авторизация через oauth технопорталов"
       requestBody:
         content:
           application/json:
@@ -30,7 +30,26 @@ paths:
               properties:
                 code:
                   type: string
-                  example: "bJN2d16XislQ4Hun5dZ8qFAWLaqgP3"
+                  example: "bJN2d16XislQ4Hun5dZ8qFAWLaqgP"
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponseUser'
+  /auth/vas3k:
+    get:
+      tags:
+        - auth
+      description: "Авторизация через vas3k external auth. Если вызвать без параметров, вернет редирект на вастрик"
+      parameters:
+        - in: query
+          name: jwt
+          schema:
+            type: string
+          description: JWT из https://vas3k.club/auth/external/
+          example: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImp0aSI6IjAwOTZhOGE2LTBlNGQtNDdlNy05MTA3LWI3OWI3OGY5ZTFiZSIsImlhdCI6MTYwNDAwNzg0NSwiZXhwIjoxNjA0MDExNDQ1fQ.n3onDyIIP_ZdWvtfJzOhnc86DWZXnCNqMSnbK700k_I"
       responses:
         "200":
           description: successful operation
@@ -251,12 +270,12 @@ components:
       properties:
         name:
           type: string
-          description: По дефолту возращается имя из профиля Технопарка
+          description: По дефолту возращается имя из сервиса авторизации
           example: Куликов Никита
         comment:
           type: string
-          example: Положить под новогоднюю елочку в Технопарке
-          default: Положить под новогоднюю елочку в Технопарке
+          example: "Мой адрес: Великий Устюг, улица Хороших IT-шников, дом с красной крышой"
+          default: "Мой адрес: Великий Устюг, улица Хороших IT-шников, дом с красной крышой"
     ApiResponse:
       type: object
       properties:
