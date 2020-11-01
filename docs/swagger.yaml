@@ -115,12 +115,8 @@ paths:
                 is_received:
                   type: boolean
                   nullable: false
-                delivery_name:
-                  type: string
-                  nullable: false
-                delivery_comment:
-                  type: string
-                  nullable: false
+                delivery_information:
+                  $ref: '#/components/schemas/DeliveryInformation'
       responses:
         default:
           description: successful operation
