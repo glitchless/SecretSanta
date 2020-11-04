@@ -115,6 +115,9 @@ paths:
                 is_received:
                   type: boolean
                   nullable: false
+                email:
+                  type: string
+                  nullable: true
                 delivery_information:
                   $ref: '#/components/schemas/DeliveryInformation'
       responses:
@@ -200,6 +203,9 @@ components:
           type: boolean
           example: false
           description: "Получил ли человек подарок"
+        email:
+          type: string
+          example: "example@glitchless.ru"
         pair_user:
           type: object
           properties:
