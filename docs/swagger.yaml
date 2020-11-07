@@ -161,7 +161,7 @@ paths:
         - chat
       parameters:
         - in: query
-          name: from
+          name: with
           schema:
             type: string
             default: sender
