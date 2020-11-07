@@ -161,10 +161,11 @@ paths:
         - chat
       parameters:
         - in: query
-          name: with_pair
+          name: with
           schema:
-            type: boolean
-            default: false
+            type: string
+            default: sender
+            enum: [receiver, sender]
           description: Когда true возвращается диалог с пользователем, которому вы дарите подарок. По умолчанию возвращается диалог вас и вашего санты
         - in: query
           name: limit
@@ -188,6 +189,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
+    post:
+      tags:
+        - chat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                to:
+                  type: string
+                  enum: [ receiver, sender ]
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
 
 components:
   schemas:
@@ -211,8 +234,9 @@ components:
           type: integer
         timestamp:
           type: integer
-        from_current_user:
-          type: boolean
+        from:
+          type: string
+          enum: [receiver, sender]
     Stats:
       type: object
       properties:
