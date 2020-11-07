@@ -236,7 +236,7 @@ components:
           type: integer
         from:
           type: string
-          enum: [receiver, sender]
+          enum: [current, companion]
     Stats:
       type: object
       properties:
