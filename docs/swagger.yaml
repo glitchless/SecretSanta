@@ -159,13 +159,29 @@ paths:
     get:
       tags:
         - chat
+      parameters:
+        - in: query
+          name: with_pair
+          schema:
+            type: boolean
+            default: false
+          description: Когда true возвращается диалог с пользователем, которому вы дарите подарок. По умолчанию возвращается диалог вас и вашего санты
+        - in: query
+          name: limit
+          schema:
+            type: integer
+        - in: query
+          name: offset_id
+          schema:
+            type: integer
+          description: ID последнего сообщения
       responses:
         "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiResponseUser'
+                $ref: '#/components/schemas/ApiResponseChat'
         default:
           description: On error
           content:
@@ -175,13 +191,28 @@ paths:
 
 components:
   schemas:
-    MessageObject:
+    Chat:
+      type: object
+      properties:
+        message_count_total:
+          type: integer
+        message_count:
+          type: integer
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+    Message:
       type: object
       properties:
         text:
           type: string
         id:
           type: integer
+        timestamp:
+          type: integer
+        from_current_user:
+          type: boolean
     Stats:
       type: object
       properties:
@@ -281,6 +312,18 @@ components:
           example: OK
         message:
           $ref: '#/components/schemas/Stats'
+    ApiResponseChat:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 200
+        status:
+          type: string
+          example: OK
+        message:
+          $ref: '#/components/schemas/Chat'
     ApiResponseUser:
       type: object
       properties:
