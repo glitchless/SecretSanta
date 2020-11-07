@@ -16,6 +16,8 @@ tags:
     description: All auth variants
   - name: profile
     description: Operations about user
+  - name: chat
+    description: Operations with chat
 paths:
   /auth/tp:
     post:
@@ -153,9 +155,33 @@ paths:
                           delivery_name:
                             type: string
                             example: 'Поле c именем не должно быть больше 25-и символов'
+  /chat:
+    get:
+      tags:
+        - chat
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponseUser'
+        default:
+          description: On error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
 
 components:
   schemas:
+    MessageObject:
+      type: object
+      properties:
+        text:
+          type: string
+        id:
+          type: integer
     Stats:
       type: object
       properties:
