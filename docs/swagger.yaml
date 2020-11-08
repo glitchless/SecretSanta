@@ -59,6 +59,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResponseUser'
+  /auth/test:
+    get:
+      tags:
+        - auth
+      description: "Тестовая авторизация доступная только на dev сервере"
+      parameters:
+        - in: query
+          name: pair_user
+          schema:
+            type: int
+        - in: query
+          name: is_active
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponseUser'
   /auth/logout:
     post:
       tags:
@@ -165,8 +186,7 @@ paths:
           schema:
             type: string
             default: sender
-            enum: [receiver, sender]
-          description: Когда true возвращается диалог с пользователем, которому вы дарите подарок. По умолчанию возвращается диалог вас и вашего санты
+            enum: [ receiver, sender ]
         - in: query
           name: limit
           schema:
@@ -210,7 +230,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
-
+  /chat/wait_new:
+    get:
+      tags:
+        - chat
+      parameters:
+        - in: query
+          name: with
+          schema:
+            type: string
+            default: sender
+            enum: [ receiver, sender ]
+        - in: query
+          name: timeout
+          schema:
+            type: integer
+        - in: query
+          name: offset_id
+          schema:
+            type: integer
+          description: ID последнего сообщения
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponseChat'
+        default:
+          description: On error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
 
 components:
   schemas:
@@ -236,7 +288,7 @@ components:
           type: integer
         from:
           type: string
-          enum: [current, companion]
+          enum: [ current, companion ]
     Stats:
       type: object
       properties:
