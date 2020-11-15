@@ -33,6 +33,9 @@ paths:
                 code:
                   type: string
                   example: "bJN2d16XislQ4Hun5dZ8qFAWLaqgP"
+                auth_source:
+                  type: string
+                  enum: [ "TECHNOPARK","MAILCOURSES","LINUX","DATA","POLIS","TECHNOATOM","TRACK","SPHERE" ]
       responses:
         "200":
           description: successful operation
