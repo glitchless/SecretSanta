@@ -249,7 +249,7 @@ paths:
           schema:
             type: integer
         - in: query
-          name: offset_id
+          name: last_id
           schema:
             type: integer
           description: ID последнего сообщения
