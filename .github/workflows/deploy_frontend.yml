@@ -1,4 +1,4 @@
-name: deploy_docker
+name: deploy_frontend
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build_and_deploy:
+  deploy_frontend:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,11 +31,3 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: glitchless/secret-santa-frontend:latest, glitchless/secret-santa-frontend:${{ github.run_number }}
-      - name: Build and push backend
-        id: docker_build_backend
-        uses: docker/build-push-action@v2
-        with:
-          context: backend/
-          platforms: linux/amd64,linux/arm/v7,linux/arm64
-          push: true
-          tags: glitchless/secret-santa-backend:latest, glitchless/secret-santa-backend:${{ github.run_number }}

@@ -1,4 +1,4 @@
-name: frontend_test
+name: backend_test
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  frontend_test:
+  backend_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

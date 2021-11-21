@@ -1,4 +1,4 @@
-name: frontend_test
+name: frontend_lint
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  frontend_test:
+  frontend_lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
