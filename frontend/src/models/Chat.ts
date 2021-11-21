@@ -3,7 +3,7 @@ import {
 } from 'mobx-state-tree';
 import routes from '@/store/routes';
 import { api } from '@/services/api';
-import axios, {Canceler, CancelToken} from 'axios';
+import axios, { Canceler, CancelToken } from 'axios';
 
 export const MessageFrom = types.enumeration('messageFrom', ['current', 'companion']);
 
