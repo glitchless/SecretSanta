@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  santa_frontend:
+    image: glitchless/secret-santa-frontend:latest
+    restart: unless-stopped
+    ports:
+      - 8051:80
+    depends_on:
+      - santa_backend
+    networks:
+      - santa_tp
+    volumes:
+      - ./config:/static/config/
+
+  postgresdb:
+    image: postgres:13
+    restart: unless-stopped
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks:
+      - postgres
+      - santa_tp
+    environment:
+      POSTGRES_PASSWORD: VERYSECRETPASSWORD
+
+  santa_backend:
+    image: glitchless/secret-santa-backend:latest
+    restart: unless-stopped
+    depends_on:
+      - postgresdb
+    environment:
+      SERVER_DATABASE_HOST: postgresdb # По какому хосту бекэнд подключается к базе. Сейчас равен названию сервиса - postgresdb
+      SERVER_DATABASE_PASSWORD: VERYSECRETPASSWORD # Пароль от базы данных, равен паролю из postgresdb
+      AUTH_TYPE: VAS3K # Способ авторизации. Может быть VAS3K, TECHNO_PORTAL или LOGINPASSWORD. Смотрите в Common.kt
+      SANTA_SHUFFLEDATE: "2020-12-24T23:59:59+03:00" # Дата когда перемешиваются участники
+      SANTA_STARTDATE: "2020-12-03T00:00:01+03:00" # Дата, с которой будет разрешена регистрация
+      SANTA_ENDDATE: "2021-01-30T00:00:01+03:00" # Дата после которой нельзя будет регистрироваться
+      TG_TOKEN: "BOTID:BOTTOKEN" # Токен бота телеграм. Если не хотите пользоваться, просто удалите эту строчку
+      TG_USERNAME: "secretsanta_bot" # Username телеграм бота. Если не хотите пользоваться, просто удалите эту строчку
+      TG_PREFIX: "#tp" # Префикс, который будет добавляться к каждому сообщению от бота
+      TG_CHATID: "-1" # ID чата/канала куда кидать сообщения
+      MAIL_DOMAIN: santa.glitchless.ru # Домен откуда пользователь будет получать письма
+      MAIL_FROM: noreply@santa.glitchless.ru # Почтовый адрес, который пользователь будет видеть в качестве отправителя
+      SERVER_URL: santa.glitchless.ru # URL сервера, на котором запускается backend
+      MAIL_FROM_NAME: "Мой Тайный Санта" # Имя отправителя в письме
+      MAIL_KEY: "key-SECRET" # Ключ от mailgun
+      SANTA_DELIVERY_NAME_MAX_LENGTH: 64 # Максимальная длина имени
+      SANTA_DELIVERY_COMMENT_MAX_LENGTH: 2024 # Максимальная длина комментариев
+      SANTA_DELIVERY_ADDRESS_MAX_LENGTH: 1024 # Максимальная длина адреса
+      SERVER_SESSION_FOLDER: /app/.sessions # Директория где хранятся сессии пользователей
+    networks:
+      - postgres
+      - santa_tp
+    volumes:
+      - ./.sessions:/app/.sessions
+
+networks:
+  postgres:
+  santa_tp:
+    driver: bridge

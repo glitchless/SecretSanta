@@ -5,7 +5,7 @@ enum class ConfigKey(val defaultValue: String) {
     USER_DEFAULT_COMMENT("Мне очень нравятся гаджеты и сладости"),
     SERVER_PORT("8000"),
     SERVER_URL("santa.vas3k.club"),
-    SERVER_SESSION_FOLDER(".sessions"),
+    SERVER_SESSION_FOLDER("/app/.sessions"),
     SERVER_SENTRY_DSN("https://991d97dc250e43a0a3eac6740a98da72@sentry.team.glitchless.ru/19"),
     SERVER_DATABASE_HOST("postgresdb:5432"),
     SERVER_DATABASE_DB("postgres"),
