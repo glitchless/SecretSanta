@@ -18,4 +18,5 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
       - name: Run test
-        run: cd backend && ./gradlew clean test
+        working-directory: ./backend
+        run: ./gradlew clean test
