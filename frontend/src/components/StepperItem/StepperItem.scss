@@ -1,0 +1,129 @@
+.stepper-item {
+  $root: &;
+  $marker-size: 20px;
+  $border-size: 5px;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  color: var(--color-text-contrast);
+
+  &:first-child {
+    #{$root}__marker::before {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    #{$root}__marker::after {
+      display: none;
+    }
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 10px;
+  }
+
+  &_active {
+    #{$root}__marker {
+      background: var(--color-background-secondary);
+
+      &::before, &::after {
+        border-color: var(--color-background-secondary);
+      }
+
+      &-pointer {
+        background-color: var(--color-background-secondary);
+      }
+    }
+  }
+
+  &_current {
+    #{$root}__marker {
+      background: var(--color-background-secondary);
+
+      &::before {
+        border-color: var(--color-background-secondary);
+      }
+
+      &::after {
+        border-color: #8DB5BF;
+      }
+
+      &-pointer {
+        background-color: var(--color-background-secondary);
+      }
+    }
+  }
+
+  &_next {
+    #{$root}__marker {
+      background: #8DB5BF;
+
+      &::before {
+        border-color: #8DB5BF;
+      }
+
+      &-pointer {
+        background-color: var(--color-background-secondary);
+      }
+    }
+  }
+
+  &__marker-pointer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__marker-pointer {
+    width: $marker-size / 2;
+    height: $marker-size / 2;
+    border-radius: 50%;
+    background: var(--color-stepper-neutral);
+  }
+
+  &__marker {
+    width: $marker-size;
+    height: $marker-size;
+    border-radius: 50%;
+    background: var(--color-stepper-neutral);
+
+    &::before, &::after {
+      position: absolute;
+      z-index: -1;
+      left: $marker-size / 2 - $border-size / 2 + 1;
+      content: ' ';
+      height: 50%;
+      border-left: $border-size solid var(--color-stepper-neutral);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      top: 50%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+
+  &__title {
+    font-size: 14px;
+  }
+
+  &__date {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

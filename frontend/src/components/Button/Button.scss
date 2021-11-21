@@ -1,0 +1,33 @@
+.button {
+    display: inline-block;
+    padding: 15px 45px;
+    background-color: var(--color-primary);
+    color: var(--color-text-button);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 14px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover, &:active {
+        background-color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    &_stretch {
+        width: 100%;
+    }
+
+    &-container {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    //&_repulsive {
+    //    margin: 10px 15px;
+    //}
+}

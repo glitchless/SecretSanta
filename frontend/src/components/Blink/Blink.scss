@@ -1,0 +1,9 @@
+.blink {
+    color: var(--color-text-link);
+    text-decoration: none;
+
+    &:hover, &:active {
+        color: var(--color-link-active);
+        text-decoration: none;
+    }
+}

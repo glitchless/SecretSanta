@@ -1,0 +1,49 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-grow: 1;
+
+    &__message-list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-y: scroll;
+        max-height: 70vh;
+    }
+
+    &__controls {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--color-bg);
+    }
+
+    &__message-input {
+        flex-grow: 1;
+        // Нано-костыль, чтобы не переделывать Input
+        & > div {
+            margin: 0;
+        }
+    }
+
+    &__send-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        font-size: 18px;
+        color: var(--color-primary);
+        border-radius: 14px;
+        background-color: var(--color-bg);
+        margin-left: 5px;
+        transition: opacity .2s;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+}

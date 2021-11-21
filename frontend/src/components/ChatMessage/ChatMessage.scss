@@ -1,0 +1,21 @@
+.chat-message {
+  border-radius: 14px;
+  padding: 10px 15px;
+  color: var(--color-primary);
+  font-size: 14px;
+  max-width: 50%;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  &_from-current {
+    background-color: var(--color-bg);
+    align-self: flex-end;
+  }
+
+  &_from-companion {
+    background-color: #DBF6EF;
+    align-self: flex-start;
+  }
+}

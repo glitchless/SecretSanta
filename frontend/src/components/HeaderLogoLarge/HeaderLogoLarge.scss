@@ -1,0 +1,28 @@
+.header-logo-large {
+  position: relative;
+  width: calc(700px + 152px);
+
+  @media (min-width: 320px) {
+    margin: 0 25px;
+  }
+
+  &__title {
+    position: absolute;
+    white-space: pre-wrap;
+    font-family: 'Hammer Fat Regular', sans-serif;
+    color: white;
+    line-height: 1;
+    font-size: 52px;
+    left: 18px;
+    top: 3px;
+  }
+
+  &__year {
+    position: absolute;
+    bottom: 50px;
+    right: 54px;
+    font-family: 'ST SEV 85178 Regular', sans-serif;
+    color: white;
+    font-size: 52px;
+  }
+}

@@ -1,0 +1,49 @@
+.summary {
+  $root: &;
+
+  color: var(--color-primary);
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &_current {
+    #{$root}__plate, #{$root}__image {
+      background-color: var(--color-bg);
+    }
+  }
+
+  &_receiver {
+    #{$root}__plate, #{$root}__image {
+      background-color: var(--color-bg-alternative);
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__image {
+    flex-shrink: 0;
+    border-radius: 14px;
+    height: 75px;
+    width: 75px;
+    margin-right: 10px;
+  }
+
+  &__plate {
+    flex-grow: 1;
+    border-radius: 14px;
+    padding: 15px 20px;
+  }
+
+  &__address {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,58 @@
+.input {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 15px;
+
+    &_grow {
+        flex-grow: 1;
+
+        & input, & textarea {
+            flex-grow: 1;
+        }
+    }
+
+    &__label {
+        display: flex;
+
+        margin-bottom: 7px;
+        font-size: 16px;
+        color: var(--color-primary);
+
+        & svg {
+            margin: 0 10px;
+            color: rgba(0, 0, 0, .2);
+        }
+    }
+
+    & input, & textarea {
+        width: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+
+        font-size: 14px;
+        color: var(--color-primary);
+        background-color: var(--color-bg);
+        border-radius: 14px;
+        outline: none;
+        border: none;
+    }
+
+    & textarea {
+        resize: vertical;
+        min-height: 60px;
+        max-height: 300px;
+    }
+
+    & input[disabled], & textarea[disabled] {
+        color: var(--color-disabled);
+        resize: none;
+    }
+
+    &__error {
+        margin-top: 10px;
+        color: var(--color-error);
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}

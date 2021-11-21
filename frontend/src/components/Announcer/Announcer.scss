@@ -1,0 +1,33 @@
+.announcer {
+    display: flex;
+    margin: 15px 0;
+    background-color: var(--color-bg);
+    border-radius: 14px;
+    overflow: hidden;
+
+    &__picture {
+        height: 200px;
+        width: 250px;
+        min-width: 250px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 15px 20px 20px 20px;
+    }
+
+    &__title {
+        font-family: 'Hammer Fat Regular', sans-serif;
+        font-size: 26px;
+        color: var(--color-text-header);
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        flex-grow: 1;
+        color: var(--color-text-contrast);
+        line-height: 1.7;
+    }
+}

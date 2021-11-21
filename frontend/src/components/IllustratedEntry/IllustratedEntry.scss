@@ -1,0 +1,36 @@
+.illustrated-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+
+    &__title {
+        margin-bottom: 5px;
+        color: var(--color-contrast);
+        font-size: 26px;
+        font-family: 'Hammer Fat Regular', sans-serif;
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    &__icon {
+        &-container {
+            padding: 0 40px 0 0;
+        }
+
+        $size: 150px;
+        width: $size;
+        height: $size;
+    }
+
+    &__info {
+        flex-grow: 1;
+    }
+}

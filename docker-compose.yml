@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  santa_frontend:
+    container_name: santa_frontend
+    build: frontend/
+    restart: unless-stopped
+    ports:
+      - 80:80
+
+  postgresdb:
+    image: postgres:13
+    restart: unless-stopped
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 123456
+
+  santa_backend:
+    container_name: santa_backend
+    build: backend/
+    restart: unless-stopped
+    depends_on:
+      - postgresdb
+    environment:
+      SERVER_DATABASE_HOST: postgresdb
+      SERVER_DATABASE_PASSWORD: 123456
+    ports:
+      - 8000:8000

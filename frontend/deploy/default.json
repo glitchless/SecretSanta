@@ -1,0 +1,31 @@
+{
+  "title": "Тайный Санта vas3k.club 2020",
+  "messages": {
+    "header": {
+      "title": "Тайный Санта vas3k.club"
+    },
+    "index-page": {
+      "howItWorks": "Secret Santa или Анонимный Дед Мороз - это лотерея рождественских подарков, когда тебе дают случайный адрес и какую-то информацию о том, для кого ты должен стать Сантой и отправить подарок. И точно так же твой адрес выдадут кому-то.",
+      "deliveryExplanation": "Рассчитайте так, чтобы подарок прибыл адресату не позже 25 декабря. Ориентировочно: 1-2 недели, если вам достался подопечный внутри страны и 3-4 недели для отправок за границу. Обязательно нажмите в личном кабинете кнопку “Подарок отправлен” и сохраните квитанцию об отправке, может пригодится, если с посылкой что-то случится не по вашей вине.",
+      "loginText": "Войти через vas3k.club"
+    }
+  },
+  "optionalFeatures": {
+    "sharingChannel": {
+      "promoText": "Поделиться можно в клубе",
+      "linkHref": "https://vas3k.club",
+      "linkText": "vas3k.club"
+    }
+  },
+  "internal": {
+    "backendUrl": "https://santa.vas3k.club/",
+    "oauth": {
+      "externalUrl": "https://vas3k.club/auth/external/",
+      "redirectParam": "redirect",
+      "backParam": "jwt",
+      "backRoute": "/oauth/",
+      "apiUrl": "/api/auth/vas3k/"
+    },
+    "donateUrl": "https://sobe.ru/na/glitchless"
+  }
+}

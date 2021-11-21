@@ -1,0 +1,25 @@
+.status-bar {
+    width: 100%;
+    background-color: var(--color-bg);
+    border-radius: 0 0 14px 14px;
+
+    &__counters {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+        background-color: var(--color-bg);
+        color: var(--color-text-contrast);
+        font-size: 20px;
+        font-family: 'ST SEV 85178 Regular', sans-serif;
+    }
+
+    &__roadmap {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+        background-color: var(--color-background-secondary);
+        border-radius: 14px;
+        color: white;
+        font-size: 14px;
+    }
+}

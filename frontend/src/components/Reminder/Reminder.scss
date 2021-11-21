@@ -1,0 +1,28 @@
+.reminder {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    background-color: var(--color-bg);
+    color: var(--color-text-contrast);
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: 'Rounded M Plus 1C', sans-serif;
+        margin-bottom: 10px;
+    }
+
+    &__entry-list {
+        text-align: justify;
+    }
+
+    &__entry {
+        line-height: 1.5;
+        border-left: 2px solid var(--color-primary);
+        padding-left: 15px;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}

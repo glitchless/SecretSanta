@@ -1,0 +1,34 @@
+.tabs-item {
+  $border-radius: 14px;
+
+  display: inline-block;
+  background-color: var(--color-bg);
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--color-primary);
+  transition: opacity .2s;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-primary);
+    opacity: .7;
+  }
+
+  &_active {
+    background-color: #C9DFEA;
+  }
+
+  &:first-child {
+    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &:not(:last-child) {
+    margin-right: 2px;
+  }
+}

@@ -1,0 +1,16 @@
+.schedule {
+  background: var(--color-bg);
+  border-radius: 14px;
+  padding: 10px 15px;
+  color: var(--color-text-contrast);
+  z-index: 1;
+
+  &__title {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  &__stepper {
+    padding: 5px 0;
+  }
+}

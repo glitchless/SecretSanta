@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  santa_frontend:
+    build: .
+    restart: unless-stopped
+    ports:
+    - 80:80
+
+  postgresdb:
+    image: postgres:13
+    restart: unless-stopped
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 123456
+
+  santa_backend:
+    image: glitchless/secret-santa-backend:latest
+    restart: unless-stopped
+    depends_on:
+      - postgresdb
+    environment:
+      SERVER_DATABASE_HOST: postgresdb
+      SERVER_DATABASE_PASSWORD: 123456

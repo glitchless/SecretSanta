@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Hammer Fat Regular';
+    src: url('/src/assets/fonts/Hammer Fat Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ST SEV 85178 Regular';
+    src: url('/src/assets/fonts/ST SEV 85178 Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('/src/assets/fonts/PTSans Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('/src/assets/fonts/PTSans Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Rounded M Plus 1C';
+    src: url('/src/assets/fonts/RoundedMplus1c Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Rounded M Plus 1C';
+    src: url('/src/assets/fonts/RoundedMplus1c ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+:root {
+    --color-contrast: #f54e56;
+    --color-error: #f54e56;
+
+    --color-bg: #E9F3F8;
+    --color-bg-alternative: #DBF6EF;
+
+    --color-button-active: #004F60;
+    --color-link-active: #004F60;
+
+    --color-primary: #004F60; // основной цвет кнопок и тд, связанного с действиями
+    --color-primary-rgb: 0,79,96; // тот же цвет, но в rgb, для того чтобы можно было подставить прозрачность
+    // TODO: цвет с прозрачностью тоже в переменные?
+
+    --color-background-secondary: #0c5061;
+    --color-text-header: #0c5061;
+    --color-text-contrast: #0c5061;
+    --color-text-link: #0c5061;
+
+    --color-text-button: #ffffff;
+
+    --color-disabled: #868686;
+    --color-neutral: #dee2e9; // используется в качестве фона в спиннере и всё
+    --color-stepper-neutral: #C4C4C4;
+
+    --color-illustration-bg: #ffcccc;
+
+    --font-size-header: 24px;
+    --font-weight-header: bold;
+}
+
+html, body {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Rounded M Plus 1C', sans-serif;
+}
+
+body {
+    flex-grow: 1;
+}
+
+#app {
+    flex-grow: 1;
+}

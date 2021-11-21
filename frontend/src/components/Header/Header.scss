@@ -1,0 +1,125 @@
+.header {
+    $root: &;
+    font-size: 24px;
+
+    &_regular {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-contrast);
+
+        min-height: 407px;
+
+        & #{$root}__controls {
+            transform: scale(1.2);
+        }
+    }
+
+    &_short {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 10px 20px;
+        background-color: var(--color-contrast);
+        color: white;
+        font-family: 'Hammer Fat Regular', sans-serif;
+
+        #{$root}-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        $size: 35px;
+        height: $size;
+        width: $size;
+        margin-right: 15px;
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__illustration {
+        width: calc(700px + 152px);
+    }
+
+    &__controls {
+        position: absolute;
+        top: 0;
+
+        @media (min-width: 320px) {
+            right: 30px;
+        }
+
+        @media (min-width: 1025px) {
+            right: 0;
+        }
+
+        padding-top: 10px;
+    }
+
+    &-controls {
+        display: flex;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            user-select: none;
+
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+
+            svg {
+                &:hover, &:active {
+                    opacity: .8;
+                }
+            }
+
+            &__icon {
+                $size: 20px;
+                width: $size;
+                height: $size;
+
+                &:hover, &:active {
+                    opacity: .8;
+                }
+            }
+
+            &__cta {
+                font-family: Roboto, sans-serif;
+                font-size: 14px;
+                color: white;
+                background-color: rgba(0, 0, 0, .1);
+                border-radius: 14px;
+                padding: 10px 15px;
+                transition: background-color .2s;
+
+                & svg {
+                    margin-right: 7px;
+                }
+
+                &:hover, &:active {
+                    background-color: rgba(0, 0, 0, .2);
+                }
+            }
+        }
+    }
+}

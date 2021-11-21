@@ -1,0 +1,17 @@
+.profile-view {
+    &__content {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__container {
+        width: 700px;
+    }
+
+    &__participate-form {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 15px 15px;
+    }
+}

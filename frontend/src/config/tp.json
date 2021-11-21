@@ -1,0 +1,67 @@
+{
+  "title": "Тайный Санта Технопарка 2020",
+  "messages": {
+    "header": {
+      "title": "Тайный Санта Технопарка"
+    },
+    "index-page": {
+      "howItWorks": "Активный пользователь Технопарка авторизовывается через портал, указывает свое ФИО, комментарии (там напишите какой подарок вы хотите и как вас найти). После окончания регистрации (22 декабря) участники случайным образом распределяются и дарят друг другу подарки!",
+      "deliveryExplanation": "Передать подарок можно через новогоднюю ёлку в Технопарке или лично. Чтобы подарок не потерялся, укажите на нем кому он и отметьте в личном кабинете что вы отправили подарок.",
+      "loginText": "Войти через ТЕХНОПАРК"
+    }
+  },
+  "optionalFeatures": {
+    "sharingChannel": {
+      "promoText": "Поделиться можно в группе Технопарка в Telegram",
+      "linkHref": "https://t.me/tpmailru",
+      "linkText": "@tpmailru"
+    }
+  },
+  "internal": {
+    "backendUrl": "https://santa.glitchless.ru",
+    "oauth": {
+      "externalUrl": "https://park.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U",
+      "backRoute": "/oauth/tp/*",
+      "backParam": "code",
+      "apiUrl": "/api/auth/tp/",
+      "providers": [
+        {
+          "name": "Технопарк",
+          "backRoute": "/oauth/tp/technopark",
+          "externalUrl": "https://park.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+        },
+        {
+          "name": "Техносфера",
+          "backRoute": "/oauth/tp/sphere",
+          "externalUrl": "https://sphere.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+        },
+        {
+          "name": "Технотрек",
+          "backRoute": "/oauth/tp/track",
+          "externalUrl": "https://track.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+        },
+        {
+          "name": "Технополис",
+          "backRoute": "/oauth/tp/polis",
+          "externalUrl": "https://polis.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+        },
+        {
+          "name": "Академия больших данных",
+          "backRoute": "/oauth/tp/data",
+          "externalUrl": "https://data.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+        },
+        {
+          "name": "ВШЭ × Mail.ru Group",
+          "backRoute": "/oauth/tp/mailcourses",
+          "externalUrl": "https://mailcourses.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+        },
+        {
+          "name": "SRE Quest",
+          "backRoute": "/oauth/tp/linux",
+          "externalUrl": "https://linux.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+        }
+      ]
+    },
+    "donateUrl": "https://sobe.ru/na/glitchless"
+  }
+}
