@@ -106,7 +106,7 @@ class HeaderComponent extends Component<Props, State> {
 				) : (
 					<div className="header header_regular">
 						<div className="header__content">
-							<HeaderLogoLarge title={headerMessages.get('title')} year="2020" />
+							<HeaderLogoLarge title={headerMessages.get('title')} year="2021" />
 							<div className="header__controls">
 								<div className="header-controls">
 									<a href={RouteStore.external.glitchless.website} className="header-controls-item">

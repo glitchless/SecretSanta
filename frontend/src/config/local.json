@@ -1,13 +1,13 @@
 {
-  "title": "Тайный Санта Технопарка 2077",
+  "title": "Тайный Санта VK Образование 2021",
   "messages": {
     "header": {
-      "title": "Тайный Санта Технопарка"
+      "title": "Тайный\nСанта\nVK Образование"
     },
     "index-page": {
-      "howItWorks": "Активный пользователь Технопарка авторизовывается через портал, указывает свое ФИО, комментарии (там напишите какой подарок вы хотите и как вас найти). После окончания регистрации (22 декабря) участники случайным образом распределяются и дарят друг другу подарки!",
+      "howItWorks": "Активный пользователь авторизовывается через образовательный портал, указывает свое ФИО, комментарии (там напишите какой подарок вы хотите и как вас найти). После окончания регистрации (20 декабря) участники случайным образом распределяются и дарят друг другу подарки!",
       "deliveryExplanation": "Передать подарок можно через новогоднюю ёлку в Технопарке или лично. Чтобы подарок не потерялся, укажите на нем кому он и отметьте в личном кабинете что вы отправили подарок.",
-      "loginText": "Войти через ТЕХНОПАРК"
+      "loginText": "Войти через VK Образование"
     }
   },
   "optionalFeatures": {
@@ -20,7 +20,7 @@
   "internal": {
     "backendUrl": "https://localhost:8080",
     "oauth": {
-      "externalUrl": "https://park.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U",
+      "externalUrl": "https://park.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U",
       "backRoute": "/oauth/tp/*",
       "backParam": "code",
       "apiUrl": "/api/auth/tp/",
@@ -28,37 +28,32 @@
         {
           "name": "Технопарк",
           "backRoute": "/oauth/tp/technopark",
-          "externalUrl": "https://park.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+          "externalUrl": "https://park.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
           "name": "Техносфера",
           "backRoute": "/oauth/tp/sphere",
-          "externalUrl": "https://sphere.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+          "externalUrl": "https://sphere.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
           "name": "Технотрек",
           "backRoute": "/oauth/tp/track",
-          "externalUrl": "https://track.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+          "externalUrl": "https://track.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
           "name": "Технополис",
           "backRoute": "/oauth/tp/polis",
-          "externalUrl": "https://polis.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+          "externalUrl": "https://polis.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
           "name": "Академия больших данных",
           "backRoute": "/oauth/tp/data",
-          "externalUrl": "https://data.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+          "externalUrl": "https://data.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
-          "name": "ВШЭ × Mail.ru Group",
+          "name": "VK Образование",
           "backRoute": "/oauth/tp/mailcourses",
-          "externalUrl": "https://mailcourses.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
-        },
-        {
-          "name": "SRE Quest",
-          "backRoute": "/oauth/tp/linux",
-          "externalUrl": "https://linux.mail.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+          "externalUrl": "https://education.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         }
       ]
     },

@@ -12,7 +12,7 @@ interface Props {
 export const HeaderLogoLarge: React.FC<Props> = ({ title, year }) => (
 	<div className="header-logo-large">
 		<div className="header-logo-large__title">
-			{title.split(' ').join('\n')}
+			{title.split('\\n').join('\n')}
 		</div>
 		<div className="header-logo-large__year">
 			{year}
