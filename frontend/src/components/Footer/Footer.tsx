@@ -43,7 +43,7 @@ export const Footer: React.FC<Props> = (props) => {
 				</div>
 			</div>
 			{/* TODO: подставлять текущий год */}
-			{!short && <img className="footer__illustration" alt="Тайный Санта 2020" src={IllustrationFooter} />}
+			{!short && <img className="footer__illustration" alt="Тайный Санта 2021" src={IllustrationFooter} />}
 		</div>
 	);
 };
