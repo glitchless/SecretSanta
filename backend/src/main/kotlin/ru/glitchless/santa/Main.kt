@@ -73,6 +73,7 @@ fun Application.server() {
     install(StatusPages) {
         statusErrorSetup()
     }
+    install(IgnoreTrailingSlash)
     routing {
         route("api") {
             route("stats") {
