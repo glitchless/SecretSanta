@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine3.9 AS builder
+FROM openjdk:11-jdk AS builder
 WORKDIR /build-dir/
 
 COPY gradle gradle
@@ -12,7 +12,7 @@ COPY build.gradle build.gradle
 COPY src src
 RUN ./gradlew jar
 
-FROM openjdk:8-jre-alpine3.9
+FROM openjdk:11-jre-slim
 WORKDIR /app/
 COPY --from=builder  /build-dir/build/libs/SecretSantaBackend-1.0.jar .
 CMD java -jar SecretSantaBackend-1.0.jar
