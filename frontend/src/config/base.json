@@ -26,7 +26,6 @@
       "backRoute": "/oauth/",
       "apiUrl": "/api/auth/vas3k/"
     },
-    "donateUrl": "https://sobe.ru/na/glitchless",
     "enableChat": false
   }
 }

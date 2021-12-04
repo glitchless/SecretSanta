@@ -25,7 +25,6 @@
       "backParam": "jwt",
       "backRoute": "/oauth/",
       "apiUrl": "/api/auth/vas3k/"
-    },
-    "donateUrl": "https://sobe.ru/na/glitchless"
+    }
   }
 }
