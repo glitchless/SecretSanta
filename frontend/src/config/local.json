@@ -54,6 +54,11 @@
           "name": "VK Education",
           "backRoute": "/oauth/tp/mailcourses",
           "externalUrl": "https://education.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+        },
+        {
+          "name": "Игросфера",
+          "backRoute": "/oauth/tp/gamesphere",
+          "externalUrl": "https://gamesphere.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         }
       ]
     },
