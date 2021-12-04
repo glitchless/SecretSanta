@@ -4,28 +4,22 @@ import com.google.gson.annotations.SerializedName
 
 enum class TPAuthSource(host: String) {
     @SerializedName("technopark")
-    TECHNOPARK("park.mail.ru"),
+    TECHNOPARK("park.vk.company"),
 
     @SerializedName("mailcourses")
-    MAILCOURSES("mailcourses.ru"),
-
-    @SerializedName("linux")
-    LINUX("linux.tech-mail.ru"),
+    MAILCOURSES("education.vk.company"),
 
     @SerializedName("data")
-    DATA("data.mail.ru"),
+    DATA("data.vk.company"),
 
     @SerializedName("polis")
-    POLIS("polis.mail.ru"),
-
-    @SerializedName("technoatom")
-    TECHNOATOM("technoatom.mail.ru"),
+    POLIS("polis.vk.company"),
 
     @SerializedName("track")
-    TRACK("track.mail.ru"),
+    TRACK("track.vk.company"),
 
     @SerializedName("sphere")
-    SPHERE("sphere.mail.ru");
+    SPHERE("sphere.vk.company");
 
     val baseUrl = "https://$host/oauth"
 }
