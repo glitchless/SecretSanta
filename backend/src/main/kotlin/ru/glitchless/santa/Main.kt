@@ -61,17 +61,9 @@ fun main() {
 
 @KtorExperimentalAPI
 fun Application.server() {
-
     install(DefaultHeaders)
     install(ContentNegotiation) {
         gson {}
-    }
-    install(CORS) {
-        allowSameOrigin = true
-        anyHost()
-        host("localhost:8080")
-        allowCredentials = true
-        allowNonSimpleContentTypes = true
     }
     install(Sessions) {
         cookie<SantaSession>(SESSION_KEY, cache) {
