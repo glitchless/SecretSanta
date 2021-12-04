@@ -19,7 +19,10 @@ enum class TPAuthSource(host: String) {
     TRACK("track.vk.company"),
 
     @SerializedName("sphere")
-    SPHERE("sphere.vk.company");
+    SPHERE("sphere.vk.company"),
+
+    @SerializedName("gamesphere")
+    GAMESPHERE("gamesphere.ru");
 
     val baseUrl = "https://$host/oauth"
 }
