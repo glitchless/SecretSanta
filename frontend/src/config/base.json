@@ -26,6 +26,7 @@
       "backRoute": "/oauth/",
       "apiUrl": "/api/auth/vas3k/"
     },
+    "donateUrl": "https://santa.glitchless.ru",
     "enableChat": false
   }
 }
