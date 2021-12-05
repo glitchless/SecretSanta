@@ -13,10 +13,8 @@ const DEV_PORT = 8080;
 
 module.exports = {
 	mode: isProduction ? 'production' : 'development',
-	entry: './src/index',
 	output: {
-		path: path.join(__dirname, 'dist'),
-		filename: 'bundle.[hash:8].js',
+		filename: 'bundle.[contenthash:8].js',
 		publicPath: '/',
 	},
 	resolve: {
@@ -81,25 +79,7 @@ module.exports = {
 			},
 			{
 				test: /\.(jpg|png|gif|svg|pdf|ttf)$/u,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[path][name]-[hash:8].[ext]',
-						},
-					},
-				],
-			},
-			{
-				test: /\.(ico|ttf)$/u,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[path][name].[ext]',
-						},
-					},
-				],
+				type: 'asset/resource',
 			},
 		],
 	},
@@ -124,13 +104,10 @@ module.exports = {
 		// new BundleAnalyzerPlugin(),
 	],
 	devServer: {
-		publicPath: '/',
-		contentBase: path.join(__dirname, '/dist'),
 		hot: true,
 		historyApiFallback: true,
 		https: true,
 		port: DEV_PORT,
-		writeToDisk: true,
 		proxy: {
 			'/api': {
 				target: 'https://santa.lionzxy.ru',
