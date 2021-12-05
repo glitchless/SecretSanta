@@ -8,4 +8,5 @@
 ```
 docker-compose docker-compose.prod.yml up
 ```
-4) По адресу `YOUR_SERVER_IP:80` в браузере у вас должен открываться рабочий сайт
+4) По адресу `YOUR_SERVER_IP:8051` в браузере у вас должен открываться рабочий сайт
+5) Дальше вам следует настроить Nginx. Используйте конфиг из [docs/example.nginx.conf](docs/example.nginx.conf) как пример
