@@ -39,7 +39,7 @@ object LogSantaBot : TelegramLongPollingBot() {
         deliveryAddress: String,
         deliveryIndex: String
     ) {
-        sendText("[$name]($link)зарегистрировался на участие в Тайном Санте")
+        sendText("[$name]($link) зарегистрировался на участие в Тайном Санте")
     }
 
     fun logInactive(name: String, link: String?) {
