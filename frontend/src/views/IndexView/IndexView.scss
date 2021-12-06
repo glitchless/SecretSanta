@@ -7,9 +7,15 @@
     }
 
     &__oauth-picker-item {
-        margin-top: 18px;
+        margin-top: 10px;
         display: flex;
         justify-content: stretch;
+
+        // Не смотрите сюда.
+        // TODO: Переделать на нормальный каскад
+        & > .button {
+            font-size: 14px;
+        }
     }
 
     &__oauth-picker-header {
