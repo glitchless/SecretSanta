@@ -23,10 +23,6 @@ import Carrier from 'services/carrier';
  */
 
 // Шрифты
-import 'assets/fonts/Hammer Fat Regular.ttf';
-import 'assets/fonts/ST SEV 85178 Regular.ttf';
-import 'assets/fonts/PTSans Regular.ttf';
-import 'assets/fonts/PTSans Bold.ttf';
 import 'assets/fonts/RoundedMplus1c Regular.ttf';
 import 'assets/fonts/RoundedMplus1c ExtraBold.ttf';
 

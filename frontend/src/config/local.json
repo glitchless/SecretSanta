@@ -23,25 +23,31 @@
       "externalUrl": "https://park.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U",
       "backRoute": "/oauth/tp/*",
       "backParam": "code",
+      "redirectParam": "redirect_uri",
       "apiUrl": "/api/auth/tp/",
       "providers": [
         {
-          "name": "Технопарк",
+          "name": "Образовательный центр VK в МГТУ им. Н. Э. Баумана",
           "backRoute": "/oauth/tp/technopark",
           "externalUrl": "https://park.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
-          "name": "Техносфера",
+          "name": "Образовательный центр VK в МГУ им. М. В. Ломоносова",
           "backRoute": "/oauth/tp/sphere",
           "externalUrl": "https://sphere.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
-          "name": "Технотрек",
+          "name": "Образовательный центр VK в МФТИ",
           "backRoute": "/oauth/tp/track",
           "externalUrl": "https://track.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
-          "name": "Технополис",
+          "name": "Образовательный центр VK в МИФИ",
+          "backRoute": "/oauth/tp/atom",
+          "externalUrl": "https://technoatom.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
+        },
+        {
+          "name": "Образовательный центр VK в Политехе",
           "backRoute": "/oauth/tp/polis",
           "externalUrl": "https://polis.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
@@ -52,11 +58,11 @@
         },
         {
           "name": "VK Education",
-          "backRoute": "/oauth/tp/mailcourses",
+          "backRoute": "/oauth/tp/education",
           "externalUrl": "https://education.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
-          "name": "Игросфера",
+          "name": "MY.GAMES Career",
           "backRoute": "/oauth/tp/gamesphere",
           "externalUrl": "https://gamesphere.ru/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         }
