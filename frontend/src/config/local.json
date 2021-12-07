@@ -43,7 +43,7 @@
         },
         {
           "name": "Образовательный центр VK в МИФИ",
-          "backRoute": "/oauth/tp/atom",
+          "backRoute": "/oauth/tp/technoatom",
           "externalUrl": "https://technoatom.vk.company/oauth/authorize/?response_type=code&client_id=znPGjDnaWOgXCm4uyhYUjmTqoBpFQ8ZrmY4bev1U"
         },
         {
