@@ -12,7 +12,7 @@ enum class TPAuthSource(host: String) {
     @SerializedName("track")
     TRACK("track.vk.company"),
 
-    @SerializedName("atom")
+    @SerializedName("technoatom")
     ATOM("technoatom.vk.company"),
 
     @SerializedName("polis")
