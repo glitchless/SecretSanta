@@ -51,7 +51,7 @@ object LogSantaBot : TelegramLongPollingBot() {
     }
 
     fun logSentMessage(to: String) {
-        sendText("Сообщение на адрес *$to* успешно отправлено")
+        sendText("Сообщение успешно отправлено")
     }
 
     fun logReceive(nameFrom: String?, nameTo: String) {
